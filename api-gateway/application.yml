@@ -1,0 +1,65 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: authentication-service
+          uri: "{cipher}AQDPQkmbPehvlPuDewrI/2k0+88Gzjjx2LyTNCJwpTCvW8HKbnzA1Gq5zT+CjHnmkzVGBSgpm1sFqtAHxlR6LY0ZzN6OmvTUTiCCfnLNpFlQGikCsfXp3BUJnx1TzZG+gpTDiaCa56TnyzBD7eowFCVQ0TGBKkiJqsMCYcnMbZCaRFeGonLNQ3WEV9Qj0dPcsftfKvF+MxSOcfO7SWK5hg/uKK9lTrU6nkW9Nnpj9bpGjbhiT34dwCemFAmqGJ5w0PNbhWxWhLEpeA21hCDcQTkgZ2OFoqYWWiqoIb0KoL6H5a7jjOU+gI+jC42d3SN1rHQpQL6zC1y/ENMsFEZbBOzWtamK1Zu73vAWg2C2UXVpFdg01ftIc6LsHaScXF9fVvNg52CZC8zHk+OfSnWQ1EFB"
+          predicates:
+            - Path=/api/v1/auth/**
+        - id: authentication-service-docs
+          uri: "{cipher}AQDPQkmbPehvlPuDewrI/2k0+88Gzjjx2LyTNCJwpTCvW8HKbnzA1Gq5zT+CjHnmkzVGBSgpm1sFqtAHxlR6LY0ZzN6OmvTUTiCCfnLNpFlQGikCsfXp3BUJnx1TzZG+gpTDiaCa56TnyzBD7eowFCVQ0TGBKkiJqsMCYcnMbZCaRFeGonLNQ3WEV9Qj0dPcsftfKvF+MxSOcfO7SWK5hg/uKK9lTrU6nkW9Nnpj9bpGjbhiT34dwCemFAmqGJ5w0PNbhWxWhLEpeA21hCDcQTkgZ2OFoqYWWiqoIb0KoL6H5a7jjOU+gI+jC42d3SN1rHQpQL6zC1y/ENMsFEZbBOzWtamK1Zu73vAWg2C2UXVpFdg01ftIc6LsHaScXF9fVvNg52CZC8zHk+OfSnWQ1EFB"
+          predicates:
+            - Path=/authentication-service/api-docs/**
+
+        - id: profile-service
+          uri: "{cipher}AQBY5Qqxqn3UogTOSn9qCLI95DcjI4nnNWj3zZgnhJm1xZSbqJ69pivELT06lqP34iT0BhgH3dQPEjsuX5LH5bDXJaQQrx3ruFXv7Dj82toDoXtXQAHIiB0FCNGU3Hz2w6BXmrg2vIKJgB7pYgt89sFXLMupZ2irTghkqt4Qy1Xy2YaMtcAwAy1n0/VFYEM4Lf5UjD2UCOrX0WoKBZySYc8O0lE9D5cvXGrURWKyeF20mFWVZ78JSEwxkfEB2eOhSpYofCx9QCBI5Tgs7xvuFzxuwokT38shAKRwLkXqag80+05vgFgpi+naXoBvGuEa2x1ikZQ2EUDkFY5cJYxuHz2TyD+dAwerHTgsLP2DABx7tTKDYIXXLGzcUdpwZA53YXsdW9UDzTQvJBAYoGnrxfce"
+          predicates:
+            - Path=/api/v1/profiles/**,/api/v1/follows/**
+          filters:
+            - Authentication
+        - id: profile-service-docs
+          uri: "{cipher}AQBY5Qqxqn3UogTOSn9qCLI95DcjI4nnNWj3zZgnhJm1xZSbqJ69pivELT06lqP34iT0BhgH3dQPEjsuX5LH5bDXJaQQrx3ruFXv7Dj82toDoXtXQAHIiB0FCNGU3Hz2w6BXmrg2vIKJgB7pYgt89sFXLMupZ2irTghkqt4Qy1Xy2YaMtcAwAy1n0/VFYEM4Lf5UjD2UCOrX0WoKBZySYc8O0lE9D5cvXGrURWKyeF20mFWVZ78JSEwxkfEB2eOhSpYofCx9QCBI5Tgs7xvuFzxuwokT38shAKRwLkXqag80+05vgFgpi+naXoBvGuEa2x1ikZQ2EUDkFY5cJYxuHz2TyD+dAwerHTgsLP2DABx7tTKDYIXXLGzcUdpwZA53YXsdW9UDzTQvJBAYoGnrxfce"
+          predicates:
+            - Path=/profile-service/api-docs/**
+
+        - id: tweet-service
+          uri: "{cipher}" # TODO
+          predicates:
+            - Path=/api/v1/tweets/**,/api/v1/likes/**,/api/v1/retweets/**,/api/v1/replies/**
+          filters:
+            - Authentication
+        - id: tweet-service-docs
+          uri: "{cipher}" # TODO
+          predicates:
+            - Path=/tweet-service/api-docs/**
+
+        - id: storage-service
+          uri: "{cipher}AQBYfO5yWugX1f8/gaWpjrZeFhkFs89C75IU32lpozhbRUW8jv/8/nj0wx6alLAd4UDV802VEhQjuLO3F/KS37lW5FVbY5D0N8sAwjHcp6fIM64LVNj7TQ/ok+ZDPpel53AEMIdHc0s708eII7X9N9gv1Tfy51AokJYWzClRGuLam98SbXlo3nGia3pSzU4FQIF5jAVcSFo8ZqglV0ocDR3TNxOogUZ73iWtH9um1RHfDg2eAZpDsIonTXTjqCjJv676Qgtw79jy0Kx1qkfadzRUoU00kMG2os+MjOQ8Sn2pIDYH8Ws/u7e4O8bzaLrZfXbT/aKWjVE1ikFucwi8kaD1uv3F5nJV4NdP1XYrrbrS1LTsKAzdcwN9uagrp9SZbRokn0uDNCRe8270KCwIh1ZW"
+          predicates:
+            - Path=/api/v1/files/**
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    url: http://34.31.238.29:8080/v3/api-docs
+    urls:
+      - name: authentication-service
+        url: /authentication-service/api-docs
+
+      - name: profile-service
+        url: /profile-service/api-docs
+
+      - name: tweet-service
+        url: /tweet-service/api-docs
+
+logging:
+  level:
+    root: info
+    org.springframework.cloud.gateway.route.RouteDefinitionLocator: info
+    org.springframework.cloud.gateway: trace

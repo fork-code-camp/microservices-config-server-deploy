@@ -1,0 +1,21 @@
+server:
+  port: 9998
+
+spring:
+  data:
+    mongodb:
+      uri: "{cipher}AQBpFYF5JgfKCR+BrJUbBfUWJVe8HshqdoN736sxEQgjXAVcKqeu34RvkymsE4ui/w5HvaqQkr5k4smPuTZjdshOquRaoNVy9OlxuNHQ9xGbnEBLy5beXku0q5hbbKuyAGYq0QvwrD/BZvc9SuVmOqiMq5Q96vGm6MTHTKYnFIaxJKmqEUorfkNjKq7nrlHyLvd3juUlOh+KebagHfaWGKJ9YFdMGxxsJ5B6J/4SpQuJNjjShjQjBXao7VVabTVPj51okvdCTLOhlKMLQlkczCoUBqaJS0Od/7c7QPSeck5qi4FctQQFe8T0w8aLf8zv76c4NUcbtjat5b9cbD/WppE73MXmAKcs5OPuIVOLM89Nj5afqjD3MfO/Wu3DmnVNtgbsXLRTykzs9BFiD+Nd/ZWEZ3CM+rB2i30rRsCLdNB4ZagLE4Kc3XYCV7lGl2TL0ozkXg8Jeb9AUdWX4SrtocRlxgh2Buxc4MW/CwI+j1SANJxuAYpw2XHCVQDBgoYHNATqwJHm9+PlTlaFdM7hlMAD"
+      auto-index-creation: true
+
+springdoc:
+  api-docs:
+    path: /profile-service/api-docs
+
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG

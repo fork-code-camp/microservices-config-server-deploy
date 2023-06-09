@@ -1,0 +1,22 @@
+server:
+  port: 9996
+
+spring:
+  datasource:
+    url: jdbc:postgresql://ec2-54-73-22-169.eu-west-1.compute.amazonaws.com:5432/da8mk3ds0ehle9
+    username: "{cipher}AQCU+FZf0mj6VyqNGzJyCwB7J4ZZQ9j4Y0fn9mtbuezMwPn36GUbu0H037RWJ6cZ/jNfYRKVHcNSXvLLqEsFga+0wnBOX2kXNh/qXwh6mav3+4WB5IqqX8EmeSvNpAAtgvGZ/BSmM++o20/KZVupVGTvotWRIRnmd2MZXCkRJMHIul2o0myIRctm74Wwkb1cK9s4d7nYRfhoB90Hb25PX7Vz3UMDDCg88zbIGeqLpdehU/dDucp/A7I+uVQRL8sq32jB7Rq9vhB4ncFcv8R3LpSyqLwtGn3bQqzWEcTGfLmztcWI9ZDOI774eoly+Z3sj2DzUn1ahuQsusxo7VYTMJhwCl30W8/QQjZU49SxVUiAR2k51mkkVhswZZ46VwxnVCE="
+    password: "{cipher}AQCkNAF11p5TYp3FRbwwtcJdRavGM0IPhx18ljlEhUmre3SmHBy3m2Bl7IOI3b2fZEbouZA2X0igePAlj+/l2qfgGGO40DeXx4kbqNSLj1XGUOcOx4Hm70YY8Xvm5/t9rUOfEQL4tpCt24UyPB03tOGmn3jkTYihh5N4FpmBC1m9lUi0YQqaX5G7/I77b129tQgnxrrvyltU2eOjzG364X2JTOpDPmzHorg7ysOWw8pE+kCkg/kh0n5r+e+A6L3QKNdXNTElWtQLXYC02gVkOhSJrbZgaezODjthDW54w7kVMVWLnpulBTVn/nC70sktwfMKMU5lXOQXtM65XLU+kvo/f+WPgP6AOk2yzCpSR9t+Tp2lyoD9Bg0NeWBcsgBfwz61c6xU5Bxq59IUyHdowZC7R+LqxK8bexJdapJZf3SvbHgzxRvBL5C0uQwQV5JGeIDtMTZ7cEFPO0dDxtT5ELdv"
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+springdoc:
+  api-docs:
+    path: /tweet-service/api-docs
